@@ -38,6 +38,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Bird.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
+     <Compile Include="Assets\Scripts\Pipe.cs" />
+     <Compile Include="Assets\Scripts\PipeGenerator.cs" />
+     <Compile Include="Assets\Scripts\PipeDestroy.cs" />
      <None Include="Assets\CasualGameBGM05\ReadMe.txt" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity Editor\2020.3.47f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
