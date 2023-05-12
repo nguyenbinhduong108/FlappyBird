@@ -32,6 +32,7 @@ public class Bird : MonoBehaviour
         // Kiem tra phim space co duoc bam khong
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            SoundController.instance.PlayThisSound("wing", 0.2f);
             if (gameStart == false)
             {
                 gameStart = true;
@@ -49,12 +50,16 @@ public class Bird : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        SoundController.instance.PlayThisSound("hit", 0.2f);
+        
         ReloadScene();
+
         score = 0;
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        SoundController.instance.PlayThisSound("point", 0.2f);
         score += 1;
         scoreText.text = score.ToString();
     }
