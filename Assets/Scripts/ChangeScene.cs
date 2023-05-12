@@ -6,9 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public int Date = DateTime.Today.Hour;
+    public int Date;
 
     private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Date = DateTime.Now.Hour;
+            Change();
+        }
+    }
+
+    private void Change()
     {
         if (Date <= 7 && Date >= 0 || Date >= 18 && Date < 24)
         {
