@@ -1,6 +1,8 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Security;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,6 +15,9 @@ public class Bird : MonoBehaviour
     public GameObject gameController;
     private int score;
     public Text scoreText;
+    public Text lastText;
+    [SerializeField]
+    private GameObject GameOverPannel;
 
     private void Awake()
     {
@@ -21,7 +26,7 @@ public class Bird : MonoBehaviour
         rigidbody.gravityScale = 0;
         score = 0;
         
-        
+        GameOverPannel.SetActive(false);
     }
 
 
@@ -50,10 +55,11 @@ public class Bird : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Time.timeScale = 0f;
         SoundController.instance.PlayThisSound("hit", 0.2f);
+        lastText.text = scoreText.text;
+        GameOverPannel.SetActive(true);
         
-        ReloadScene();
-
         score = 0;
         
     }
@@ -63,7 +69,7 @@ public class Bird : MonoBehaviour
         score += 1;
         scoreText.text = score.ToString();
     }
-    public void ReloadScene()
+    public void btnReplay()
     {
         SceneManager.LoadScene("mainScene");
     }
