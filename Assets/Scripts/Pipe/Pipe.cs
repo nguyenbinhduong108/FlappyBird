@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pipe : MonoBehaviour
 {
+
     public float speed;
     // Start is called before the first frame update
     void Start()
@@ -16,8 +17,23 @@ public class Pipe : MonoBehaviour
     {
         Move();
     }
+
+
     private void Move()
     {
         this.transform.position += Vector3.left * speed * Time.deltaTime;
+    }
+
+    private void OnCollisionEnter2D(Collision2D target)
+    {
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D target)
+    {
+        if (target.tag == "Destroy")
+        {
+            Destroy(gameObject);
+        }
     }
 }

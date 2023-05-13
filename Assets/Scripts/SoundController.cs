@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Design pattern: Singleton
     public static SoundController instance;
+
     private void Awake()
     {
         instance = this;
     }
 
-    public void PlayThisSound(string clipName, float volumn)
+    public void PlayThisSound(string clipName, float volumnMultiplier)
     {
         AudioSource audioSource = this.gameObject.AddComponent<AudioSource>();
-        audioSource.volume *= volumn;
-        audioSource.PlayOneShot((AudioClip)Resources.Load("Sound/" + clipName, typeof (AudioClip)));
+        audioSource.volume *= volumnMultiplier;
+        audioSource.PlayOneShot((AudioClip)Resources.Load("Sound/" + clipName, typeof(AudioClip)));
     }
-    
 }
