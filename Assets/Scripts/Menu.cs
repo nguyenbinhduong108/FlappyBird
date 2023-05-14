@@ -19,7 +19,6 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("lazerScene");
     }
-
     public void helpScene()
     {
         SceneManager.LoadScene("Help1");
