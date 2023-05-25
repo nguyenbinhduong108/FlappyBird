@@ -1841,10 +1841,10 @@ GameObject:
   - component: {fileID: 1017226994}
   - component: {fileID: 1017226993}
   - component: {fileID: 1017226992}
-  - component: {fileID: 1017226991}
   - component: {fileID: 1017226995}
-  - component: {fileID: 1017226996}
+  - component: {fileID: 1017226991}
   - component: {fileID: 1017226997}
+  - component: {fileID: 1017226996}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged

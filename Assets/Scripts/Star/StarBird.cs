@@ -89,7 +89,7 @@ public class StarBird : MonoBehaviour
 
         if(collision.tag == "StarFire")
         {
-            SoundController.instance.PlayThisSound("uh", 20f);
+            SoundController.instance.PlayThisSound("uh", 0.2f);
             Destroy(collision.gameObject);
             lives--;
             for(int i = 0; i< liveUI.Length; i++)
@@ -106,6 +106,7 @@ public class StarBird : MonoBehaviour
             if(lives <= 0)
             {
                 Time.timeScale = 0f;
+                lastText.text = scoreText.text;
                 GameOverPanel.SetActive(true);
             }
         }
